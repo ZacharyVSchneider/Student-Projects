@@ -1,0 +1,4 @@
+FROM gcc:latest
+COPY HelloWorld.c .
+RUN gcc -o main HelloWorld.c
+CMD ./main

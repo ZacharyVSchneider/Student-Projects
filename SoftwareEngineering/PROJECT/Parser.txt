@@ -1,0 +1,58 @@
+#include <iostream>
+#include <list>
+#include <string>
+using namespace std;
+
+
+enum TokenType{LPAR =-2, RPAR = -1, VAL = 0, XOR, NAND, OR, AND, NOT, UNDEF = -99};
+
+struct Token {
+    enum TokenType type; # Type of token (programmatically), is a enum value
+    int pos;    # Character position
+    str lexeme; # The literal character
+    int value; 	# The literal value (T = 1, F = 0, All others = -1)
+}
+
+#Created a global list, type Token, to pass in and out of functions.
+list<Token> Tokens;
+
+
+#Function to convert every possible character given to the program into something it can work with
+
+void Tokenize(string line;list<Token>& Tokens){
+	int place = 0;
+	for (string::iterator char = str.begin(); char !=str.end(); char++; place++){
+		switch(char){
+			case '(': 
+				Tokens.append(Token(TokenType = LPAR, place, char,-1))
+				break;
+			case ')': 
+				Tokens.append(Token(TokenType = RPAR, place, char,-1))
+				break;
+			case '!': 
+				Tokens.append(Token(TokenType = NOT, place, char,-1))
+				break;
+			case '&': 
+				Tokens.append(Token(TokenType = AND, place, char,-1))
+				break;
+			case '|': 
+				Tokens.append(Token(TokenType = OR, place, char,-1))
+				break;
+			case '@': 
+				Tokens.append(Token(TokenType = NAND, place, char,-1))
+				break;
+			case '$': 
+				Tokens.append(Token(TokenType = XOR, place, char,-1))
+				break;
+			case 'T': 
+				Tokens.append(Token(TokenType = LPAR, place, char,1))
+				break;
+			case 'F': 
+				Tokens.append(Token(TokenType = LPAR, place, char,0))
+				break;
+            		case '\t' | '\r' | '\n' | ' ':
+				break;
+            		case _:
+				throw SyntaxError("Invalid token %s found.",char)
+		}
+	}
