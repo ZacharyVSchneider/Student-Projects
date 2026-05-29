@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1711340071 source:c:\users\16202\documents\coding resources\c projects\eecs348lab6\arrays.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<cmath>
+

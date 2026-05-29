@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1710125015 source:c:\users\16202\documents\coding resources\c projects\348lab\nfl.c
+	<stdio.h>
+	<stdlib.h>
+

@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int cubed(int in)
+{
+    in *=in*in;
+
+    return in;
+}
+
+int main()
+{
+    int input;
+    printf("Enter a number to cube: ");
+    scanf("%d", &input);
+    int* in = input;
+    int output = cubed(in);
+    input = cubed(in);
+    printf("The Number cubed is %d",output);
+    printf("\n");
+    printf("Or %d", input);
+}
